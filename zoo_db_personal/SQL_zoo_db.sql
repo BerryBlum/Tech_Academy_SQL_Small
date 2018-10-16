@@ -115,3 +115,10 @@ Insert into tbl_species
 
 SELECT * FROM tbl_species;
 
+Select
+	a1.species_name, a2.habitat_type, a2.habitat_cost,
+	a3.nutrition_type, a3.nutrition_cost
+	FROM tbl_species a1
+	INNER JOIN tbl_habitat a2 ON a2.habitat_id = a1.species_habitat
+	INNER JOIN tbl_nutrition a3 ON a3.nutrition_id = a1.species_nutrition
+	WHERE species_name = 'ghost bat';
