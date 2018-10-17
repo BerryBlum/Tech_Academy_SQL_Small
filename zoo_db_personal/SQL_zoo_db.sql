@@ -1,5 +1,8 @@
 USE db_zoo
 
+IF Exists (SELECT 1 FROM INFORMATION_SCHEMA.TABLES tbl_species)
+	DROP TABLE tbl_species, tbl_animalia, tbl_care, tbl_class, tbl_habitat, tbl_nutrition, tbl_order, tbl_specialist;
+
 CREATE TABLE tbl_animalia
 	(
 	animalia_id INT PRIMARY KEY NOT NULL IDENTITY (1, 1),
